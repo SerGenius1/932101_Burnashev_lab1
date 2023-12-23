@@ -8,7 +8,7 @@ condition_variable cv;
 bool flag = false;
 
 
-void producer()
+void provider()
 {
 	while (true)
 	{
@@ -17,7 +17,6 @@ void producer()
 		flag = true;
 		cout << "Событие отправлено\n";
 		cv.notify_one();
-		ul.unlock();
 	}
 }
 
@@ -36,7 +35,7 @@ void consumer()
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	thread th1(producer);
+	thread th1(provider);
 	thread th2(consumer);
 
 	th1.join();
