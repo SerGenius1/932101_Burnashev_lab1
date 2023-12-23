@@ -17,7 +17,6 @@ void producer()
 		flag = true;
 		cout << "Событие отправлено\n";
 		cv.notify_one();
-		ul.unlock();
 	}
 }
 
