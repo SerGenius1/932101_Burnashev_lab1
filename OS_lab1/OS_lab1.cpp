@@ -15,7 +15,7 @@ void provider()
 		this_thread::sleep_for(chrono::milliseconds(1000));
 		unique_lock<mutex> ul(mtx);
 		flag = true;
-		cout << "Событие отправлено1\n";
+		cout << "Событие отправлено\n";
 		cv.notify_one();
 	}
 }
